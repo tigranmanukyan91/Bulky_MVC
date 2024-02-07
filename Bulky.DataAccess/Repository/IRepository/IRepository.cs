@@ -10,9 +10,9 @@ namespace BulkyBook.DataAccess.Repository.IRepository
 	public interface IRepository<T> where T : class
 	{
 		//T - Category or any other generic model on which we want to do CRUD operation
-		IEnumerable<T> GetAll();
+		IEnumerable<T> GetAll(string? includeProperties = null);
 		// TODO
-		T Get(Expression<Func<T,bool>> filter);
+		T Get(Expression<Func<T,bool>> filter, string? includeProperties = null);
 		void Add(T entity);
 		void Remove(T entity);
 		void RemoveRange(IEnumerable<T> entity);
